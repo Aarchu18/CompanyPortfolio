@@ -1,0 +1,91 @@
+
+
+
+<form class="cmp-form" #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)">
+    <input type="hidden" name="CompanyID" #CompanyID="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyID">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" name="CompanyName" #CompanyName="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyName"
+          placeholder="Company Name" required>
+        <div class="validation-error" *ngIf="CompanyName.invalid && CompanyName.touched">This Field is Required.</div>
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" name="CompanyAddress" #CompanyAddress="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyAddress" placeholder="Company Address "
+          required>
+        <div class="validation-error" *ngIf="CompanyAddress.invalid && CompanyAddress.touched">This Field is Required.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="CompanyEmail" #CompanyEmail="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyEmail" placeholder="Company Email">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" name="CompanyPhoneNo" #CompanyPhoneNo="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyPhoneNo" placeholder="Company PhoneNo">
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" name="CompanyContactPerson" #CompanyContactPerson="ngModel" [(ngModel)]="companyService.selectedCompany.CompanyContactPerson" placeholder="Company ContactPerson">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-8">
+        <button [disabled]="!companyForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+          <i class="fa fa-floppy-o"></i> Submit</button>
+      </div>
+      <div class="form-group col-md-4">
+        <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(companyForm)">
+          <i class="fa fa-repeat"></i> Reset</button>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="cmp-form" #companyForm="ngForm" (ngSubmit)="onSubmit(companyForm)">
+        <input class="form-control" type="hidden" name="CompanyID" #CompanyID="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyID" placeholder="CompanyID" required>
+<div class="form-row">
+<div class="form-group-col-md-6">
+        
+<input class="form-control" name="CompanyName" #CompanyName="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyName" placeholder="CompanyName" required>
+<div class="validation-error" *ngIf="CompanyName.invalid && CompanyName.touched">This is required</div>
+</div>
+<div class="form-group-col-md-6">
+    <input class="form-control" name="CompanyAddress" #CompanyAddress="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyAddress" placeholder="CompanyAddress">
+    <div class="validation-error" *ngIf="CompanyAddress.invalid && CompanyAddress.touched">This is required</div>
+</div>
+</div>
+<div class="form-group">
+    <input class="form-control" name="CompanyEmail" #CompanyEmail="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyEmail" placeholder="CompanyEmail">
+    <div class="validation-error" *ngIf="CompanyEmail.invalid && CompanyEmail.touched">This is required</div>
+</div>
+<div class="form-row">
+    <div class="form-group-col-md-6">
+    <input class="form-control" name="CompanyPhoneNo" #CompanyPhoneNo="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyPhoneNo"placeholder="CompanyPhoneNo">
+    <div class="validation-error" *ngIf="CompanyPhoneNo.invalid && CompanyPhoneNo.touched">This is required</div>
+    </div>
+    <div class="form-group-col-md-6">
+        <input class="form-control" name="CompanyContactPerson" #CompanyContactPerson="ngModel"[(ngModel)]="companyService.selectedCompany.CompanyContactPerson"placeholder="CompanyContact Person">
+        <div class="validation-error" *ngIf="CompanyContactPerson.invalid && CompanyContactPerson.touched">This is required</div>
+    </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group-col-md-8">
+        <button type="submit" class="btn btn-lg btn-block btn-info" ><i class="fa fa-floppy-o" aria-hidden="true"></i>Submit</button>
+        </div>
+        <div class="form-group-col-md-4">
+            <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(companyForm)">
+                 
+               <i class="fa fa-repeat" aria-hidden="true"></i> Reset</button>
+        </div>
+        </div>
+
+</form>
+ -->
